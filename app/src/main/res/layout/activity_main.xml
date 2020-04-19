@@ -10,20 +10,71 @@
         android:id="@+id/displayTV"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
+        android:layout_marginBottom="316dp"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintRight_toRightOf="parent" />
 
     <Button
         android:id="@+id/cilckMeBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Click Me!"
+        android:layout_marginBottom="28dp"
+        android:text="Calculate Weight"
         app:layout_constraintBottom_toTopOf="@+id/displayTV"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/messageTV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Enter your Weight"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/weightET"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.71" />
+
+    <EditText
+        android:id="@+id/weightET"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="112dp"
+        android:ems="10"
+        android:hint="Enter your Weight in here.."
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toTopOf="@+id/cilckMeBtn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <CheckBox
+        android:id="@+id/marsCheckBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="80dp"
+        android:text="Mars"
+        app:layout_constraintBottom_toTopOf="@+id/cilckMeBtn"
+        app:layout_constraintEnd_toStartOf="@+id/jupiterCheckBox"
+        app:layout_constraintHorizontal_bias="0.445"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/weightET"
+        app:layout_constraintVertical_bias="0.505" />
+
+    <CheckBox
+        android:id="@+id/jupiterCheckBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="108dp"
+        android:layout_marginBottom="40dp"
+        android:text="Jupiter"
+        app:layout_constraintBottom_toTopOf="@+id/cilckMeBtn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/weightET"
+        app:layout_constraintVertical_bias="0.936" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
