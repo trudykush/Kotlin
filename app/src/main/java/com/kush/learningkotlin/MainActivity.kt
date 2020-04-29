@@ -1,5 +1,7 @@
 package com.kush.learningkotlin
 
+import android.app.Activity
+import android.content.Intent
 import android.opengl.Visibility
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -10,6 +12,7 @@ import android.view.View
 import android.widget.CheckBox
 import android.widget.Toast
 import androidx.core.view.isVisible
+import com.kush.learningkotlin.ui.RecyclerViewUI
 import kotlinx.android.synthetic.main.activity_main.*
 import org.w3c.dom.Text
 
@@ -17,6 +20,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
 
     val marsGravity: Float = 0.38f
     val jupiterGravity: Float = 2.4f
+    val REQUEST_CODE = 1
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -32,6 +36,12 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
             } else {
                 displayTV.text = weightOnOtherPlanet
             }
+        }
+
+        goToImageFilterBtn.setOnClickListener {
+            var goToImageFilterIntent = Intent(this, ImageFilter::class.java)
+            goToImageFilterIntent.putExtra("Name", "Kush")
+            startActivityForResult(goToImageFilterIntent, REQUEST_CODE)
         }
 
         marsCheckBox.setOnClickListener(this)
@@ -57,6 +67,27 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
             }
         })
 
+        goToListViewBtn.setOnClickListener {
+            var goToListView = Intent(this, SimpleListView::class.java)
+            startActivity(goToListView)
+        }
+
+        recyclerViewBtn.setOnClickListener {
+            var goToRecyclerViewUI = Intent(this, RecyclerViewUI::class.java)
+            startActivity(goToRecyclerViewUI)
+        }
+
+    // End of onCreate
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+        if (requestCode == REQUEST_CODE) {
+            if (resultCode == Activity.RESULT_OK) {
+                var messageFromImageFilter = data?.extras?.get("Name").toString()
+                Toast.makeText(this, messageFromImageFilter, Toast.LENGTH_LONG).show()
+            }
+        }
     }
 
     fun Double.format(digit: Int) =
