@@ -2,8 +2,6 @@ package com.kush.learningkotlin
 
 import android.app.Activity
 import android.content.Intent
-import android.opengl.Visibility
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextUtils
@@ -11,10 +9,10 @@ import android.text.TextWatcher
 import android.view.View
 import android.widget.CheckBox
 import android.widget.Toast
-import androidx.core.view.isVisible
+import androidx.appcompat.app.AppCompatActivity
 import com.kush.learningkotlin.ui.RecyclerViewUI
+import com.kush.learningkotlin.ui.SharedPreferencesKotlin
 import kotlinx.android.synthetic.main.activity_main.*
-import org.w3c.dom.Text
 
 class MainActivity : AppCompatActivity(), View.OnClickListener {
 
@@ -75,6 +73,10 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         recyclerViewBtn.setOnClickListener {
             var goToRecyclerViewUI = Intent(this, RecyclerViewUI::class.java)
             startActivity(goToRecyclerViewUI)
+        }
+
+        sharedPrefBtn.setOnClickListener {
+            startActivity(Intent(this, SharedPreferencesKotlin::class.java))
         }
 
     // End of onCreate
