@@ -72,18 +72,21 @@
                 android:id="@+id/editButton"
                 android:layout_width="25dp"
                 android:layout_height="25dp"
-                android:layout_alignBottom="@id/choreNameInList"
                 android:layout_alignStart="@id/choreDateInList"
-                android:background="@android:drawable/ic_menu_edit"/>
+                android:layout_alignBottom="@id/choreNameInList"
+                android:layout_marginStart="20dp"
+                android:layout_marginBottom="0dp"
+                android:background="@android:drawable/ic_menu_edit" />
 
             <Button
                 android:id="@+id/deleteButton"
                 android:layout_width="25dp"
                 android:layout_height="25dp"
                 android:layout_alignBottom="@id/choreNameInList"
-                android:layout_marginLeft="9dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginBottom="0dp"
                 android:layout_toRightOf="@id/editButton"
-                android:background="@android:drawable/ic_delete"/>
+                android:background="@android:drawable/ic_delete" />
         </RelativeLayout>
     </androidx.cardview.widget.CardView>
 </androidx.constraintlayout.widget.ConstraintLayout>
